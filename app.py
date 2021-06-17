@@ -2,7 +2,7 @@
 from flask import Flask, request, make_response
 '''
 
-from flask import Flask,request, make_response,json
+from flask import Flask,request, make_response,jsonify
 app = Flask(__name__)
 
 @app.route("/")
@@ -13,14 +13,6 @@ def hello2():
 def home():
     return 'success'
 
-companies = [{"id": 1, "name": "Company One"}, {"id": 2, "name": "Company Two"}]
-
-@api.route('/companies', methods=['GET'])
-def get_companies():
-  return json.dumps(companies)
-
 
 if __name__=='__main__':
     app.run(debug=True)
-
-
